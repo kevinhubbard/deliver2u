@@ -17,11 +17,11 @@ export default class Confirm extends React.Component {
   
   render() {
     return (
-      <div>
+      <div className="text-center">
         <ModalAlert success={this.state.success}/>
 
-        <ul>
-          <li><Link to="/main">Home</Link></li>
+        <ul className="list-group">
+          <li className="list-group-item"><Link to="/main">Home</Link></li>
           </ul>
       </div>
 

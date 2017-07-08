@@ -32,8 +32,11 @@ class Order extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>Your Current Order</h1>
+      <div className="container">
+        <div className="row">
+          <div className="jumbotron">
+        <h1 className="text-center">Your Current Order</h1>
+        <br />
         <CreateOrder order={this.state.order} createTask={this.createTask.bind(this)} />
           <OrderList
             order={this.state.order}
@@ -42,14 +45,16 @@ class Order extends React.Component {
             deleteTask={this.deleteTask.bind(this)}
           />
 
-          <ul role="nav">
-          <li><Link to="/main">Back</Link></li>
+          <ul className="list-group" role="nav">
+          <li className="list-group-item"><Link to="/main">Back</Link></li>
          </ul>
           
-          <ul>
-          <li><Link to="/confirm">Place Your Order</Link></li>
+          <ul className="list-group" role="nav">
+          <li className="list-group-item"><Link to="/confirm">Place Your Order</Link></li>
           </ul>
 
+          </div>
+        </div>
       </div>
     );
   }
@@ -66,7 +71,7 @@ class Order extends React.Component {
 
     //change the color of the todo based on its completion
     foundOrder.isCompleted = !foundOrder.isCompleted;
-    this.setState({todos: this.state.todos})
+    this.setState({order: this.state.order})
   }
 
   //this function pushes a task into the todos array with an isCompleted value of false

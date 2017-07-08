@@ -27,7 +27,7 @@ export default class OrderListItem extends React.Component {
       return (
         <td>
           <form onSubmit={this.onSaveClick.bind(this)}>
-            <input type="text" defaultValue={task} ref="editInput" />
+            <input class="form-control" type="text" defaultValue={task} ref="editInput" />
           </form>
         </td>
       )
@@ -50,17 +50,17 @@ export default class OrderListItem extends React.Component {
     //if isEditing, return save/cancel
     if(this.state.isEditing) {
       return (
-        <td>
-          <button onClick={this.onSaveClick.bind(this)}>Save</button>
-          <button onClick={this.onCancelClick.bind(this)}>Cancel</button>
+        <td className="text-right">
+          <button className="btn btn-success glyphicon glyphicon-ok" onClick={this.onSaveClick.bind(this)}>Save</button>
+          <button className="btn btn-warning glyphicon glyphicon-remove" onClick={this.onCancelClick.bind(this)}>Cancel</button>
         </td>
       )
     }
     //if !isEditing, return edit/delete
     return (
-      <td>
-        <button onClick={this.onEditClick.bind(this)}>Edit</button>
-        <button onClick={this.props.deleteTask.bind(this, this.props.task)}>Delete</button>
+      <td className="text-right">
+        <button className="btn btn-primary glyphicon glyphicon-edit" onClick={this.onEditClick.bind(this)}>Edit</button>
+        <button className="btn btn-danger glyphicon glyphicon-trash" onClick={this.props.deleteTask.bind(this, this.props.task)}>Delete</button>
       </td>
     )
   }
@@ -68,10 +68,14 @@ export default class OrderListItem extends React.Component {
   //render the buttons defined above on the page!
   render() {
     return (
+      <table className="table">
+      <tbody>
       <tr>
         <td>{this.renderTaskSection()}</td>
         {this.renderActionsSection()}
       </tr>
+      </tbody>
+      </table>
     );
   }
 

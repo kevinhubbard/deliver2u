@@ -29,13 +29,14 @@ var Form = React.createClass({
   // Here we describe this component's render method
   render: function() {
     return (
-      <div className="panel panel-default">
-        <div className="panel-heading">
+      <div className="container text-center">
+      <div className="panel panel-default text-center">
+        <div className="panel-heading text-center">
           <h3 className="panel-title text-center">Enter the Delivery Address</h3>
         </div>
         <div className="panel-body text-center">
           <form onSubmit={this.handleSubmit}>
-            <div className="form-group">
+            <div className="form-group text-center">
               <h4 className="">
                 <strong>Location</strong>
               </h4>
@@ -63,6 +64,7 @@ var Form = React.createClass({
             </div>
           </form>
         </div>
+      </div>
       </div>
     );
   }

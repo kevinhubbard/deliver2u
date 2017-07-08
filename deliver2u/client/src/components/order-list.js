@@ -23,7 +23,7 @@ export default class OrderList extends React.Component {
 //todosListHeader component at the top.
   render() {
     return (
-      <table>
+      <table className="table">
         <OrderListHeader />
         <tbody>
           {this.renderItems()}

@@ -55,34 +55,31 @@ var Main = React.createClass({
   // Here we render the function
   render: function() {
     return (
-      <div className="container">
-        <div className="row">
-          <div className="jumbotron">
+      <div className="container text-center">
+        <div className="row text-center">
+          <div className="jumbotron text-center">
             <h2 className="text-center">Deliver2U</h2>
             <p className="text-center">
-              <em>Please fill out the required fields</em>
+              <em>An easy delivery app for everyday items!</em>
             </p>
           </div>
 
-          <div className="col-md-6">
+          <div className="col-md-6 text-center">
 
             <Form setTerm={this.setTerm} />
-
-          </div>
-
-          <div className="col-md-6">
-
             <Results address={this.state.results} />
 
           </div>
 
+          
+
         </div>
 
-        <div>
-    <ul role="nav">
-          <li><Link to="/order">Next</Link></li>
+        <span className="text-center">
+       <ul className="list-group" role="nav">
+          <li className="list-group-item"><Link to="/order">Next</Link></li>
         </ul>
-      </div>
+      </span>
 
       </div>
     );

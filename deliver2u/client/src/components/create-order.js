@@ -24,10 +24,15 @@ export default class OrderList extends React.Component {
   render() {
     return (
       <form onSubmit={this.handleCreate.bind(this)}>
-        <input type="text" placeholder="Enter your Order"
+
+        <input className="form-control text-center" type="text" placeholder="Enter an item"
         ref="createInput" />
-        <button>Add an item</button>
+         <br />
+         <br />
+        <button className="btn btn-primary">Add an item</button>
         {this.renderError()}
+         <br />
+        <br />
       </form>
     );
   };

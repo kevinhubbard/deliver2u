@@ -7,7 +7,7 @@ const Base = ({ children }) => (
   <div>
     <div className="top-bar">
       <div className="top-bar-left">
-        <IndexLink to="/">Delivery App</IndexLink>
+        <IndexLink to="/">Deliver2U</IndexLink>
       </div>
 
       {Auth.isUserAuthenticated() ? (

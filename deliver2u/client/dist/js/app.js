@@ -35343,7 +35343,7 @@
 	        _react2.default.createElement(
 	          _reactRouter.IndexLink,
 	          { to: '/' },
-	          'Delivery App'
+	          'Deliver2U'
 	        )
 	      ),
 	      _Auth2.default.isUserAuthenticated() ? _react2.default.createElement(
@@ -35474,7 +35474,7 @@
 	  return _react2.default.createElement(
 	    _Card.Card,
 	    { className: 'container' },
-	    _react2.default.createElement(_Card.CardTitle, { title: 'React Application', subtitle: 'This is the home page.' })
+	    _react2.default.createElement(_Card.CardTitle, { title: 'Deliver2U', subtitle: 'Welcome! Please Login or Signup.' })
 	  );
 	};
 
@@ -43892,42 +43892,51 @@
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'div',
-	        null,
+	        { className: 'container' },
 	        _react2.default.createElement(
-	          'h1',
-	          null,
-	          'Your Current Order'
-	        ),
-	        _react2.default.createElement(_createOrder2.default, { order: this.state.order, createTask: this.createTask.bind(this) }),
-	        _react2.default.createElement(_orderList2.default, {
-	          order: this.state.order,
-	          toggleTask: this.toggleTask.bind(this),
-	          saveTask: this.saveTask.bind(this),
-	          deleteTask: this.deleteTask.bind(this)
-	        }),
-	        _react2.default.createElement(
-	          'ul',
-	          { role: 'nav' },
+	          'div',
+	          { className: 'row' },
 	          _react2.default.createElement(
-	            'li',
-	            null,
+	            'div',
+	            { className: 'jumbotron' },
 	            _react2.default.createElement(
-	              _reactRouter.Link,
-	              { to: '/main' },
-	              'Back'
-	            )
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'ul',
-	          null,
-	          _react2.default.createElement(
-	            'li',
-	            null,
+	              'h1',
+	              { className: 'text-center' },
+	              'Your Current Order'
+	            ),
+	            _react2.default.createElement('br', null),
+	            _react2.default.createElement(_createOrder2.default, { order: this.state.order, createTask: this.createTask.bind(this) }),
+	            _react2.default.createElement(_orderList2.default, {
+	              order: this.state.order,
+	              toggleTask: this.toggleTask.bind(this),
+	              saveTask: this.saveTask.bind(this),
+	              deleteTask: this.deleteTask.bind(this)
+	            }),
 	            _react2.default.createElement(
-	              _reactRouter.Link,
-	              { to: '/confirm' },
-	              'Place Your Order'
+	              'ul',
+	              { className: 'list-group', role: 'nav' },
+	              _react2.default.createElement(
+	                'li',
+	                { className: 'list-group-item' },
+	                _react2.default.createElement(
+	                  _reactRouter.Link,
+	                  { to: '/main' },
+	                  'Back'
+	                )
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'ul',
+	              { className: 'list-group', role: 'nav' },
+	              _react2.default.createElement(
+	                'li',
+	                { className: 'list-group-item' },
+	                _react2.default.createElement(
+	                  _reactRouter.Link,
+	                  { to: '/confirm' },
+	                  'Place Your Order'
+	                )
+	              )
 	            )
 	          )
 	        )
@@ -43950,7 +43959,7 @@
 
 	      //change the color of the todo based on its completion
 	      foundOrder.isCompleted = !foundOrder.isCompleted;
-	      this.setState({ todos: this.state.todos });
+	      this.setState({ order: this.state.order });
 	    }
 
 	    //this function pushes a task into the todos array with an isCompleted value of false
@@ -44066,14 +44075,18 @@
 	      return _react2.default.createElement(
 	        'form',
 	        { onSubmit: this.handleCreate.bind(this) },
-	        _react2.default.createElement('input', { type: 'text', placeholder: 'Enter your Order',
+	        _react2.default.createElement('input', { className: 'form-control text-center', type: 'text', placeholder: 'Enter an item',
 	          ref: 'createInput' }),
+	        _react2.default.createElement('br', null),
+	        _react2.default.createElement('br', null),
 	        _react2.default.createElement(
 	          'button',
-	          null,
+	          { className: 'btn btn-primary' },
 	          'Add an item'
 	        ),
-	        this.renderError()
+	        this.renderError(),
+	        _react2.default.createElement('br', null),
+	        _react2.default.createElement('br', null)
 	      );
 	    }
 	  }, {
@@ -44210,7 +44223,7 @@
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'table',
-	        null,
+	        { className: 'table' },
 	        _react2.default.createElement(_orderListHeader2.default, null),
 	        _react2.default.createElement(
 	          'tbody',
@@ -61321,7 +61334,7 @@
 /* 478 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -61351,24 +61364,28 @@
 	  }
 
 	  _createClass(OrderListHeader, [{
-	    key: 'render',
+	    key: "render",
 	    value: function render() {
 	      //task and action header names. simple component. 
 	      return _react2.default.createElement(
-	        'thead',
-	        null,
+	        "table",
+	        { className: "table" },
 	        _react2.default.createElement(
-	          'tr',
+	          "thead",
 	          null,
 	          _react2.default.createElement(
-	            'th',
+	            "tr",
 	            null,
-	            'Items'
-	          ),
-	          _react2.default.createElement(
-	            'th',
-	            null,
-	            'Update'
+	            _react2.default.createElement(
+	              "th",
+	              null,
+	              "Items"
+	            ),
+	            _react2.default.createElement(
+	              "th",
+	              { className: "text-right" },
+	              "Update"
+	            )
 	          )
 	        )
 	      );
@@ -61445,7 +61462,7 @@
 	          _react2.default.createElement(
 	            'form',
 	            { onSubmit: this.onSaveClick.bind(this) },
-	            _react2.default.createElement('input', { type: 'text', defaultValue: task, ref: 'editInput' })
+	            _react2.default.createElement('input', { 'class': 'form-control', type: 'text', defaultValue: task, ref: 'editInput' })
 	          )
 	        );
 	      }
@@ -61470,15 +61487,15 @@
 	      if (this.state.isEditing) {
 	        return _react2.default.createElement(
 	          'td',
-	          null,
+	          { className: 'text-right' },
 	          _react2.default.createElement(
 	            'button',
-	            { onClick: this.onSaveClick.bind(this) },
+	            { className: 'btn btn-success glyphicon glyphicon-ok', onClick: this.onSaveClick.bind(this) },
 	            'Save'
 	          ),
 	          _react2.default.createElement(
 	            'button',
-	            { onClick: this.onCancelClick.bind(this) },
+	            { className: 'btn btn-warning glyphicon glyphicon-remove', onClick: this.onCancelClick.bind(this) },
 	            'Cancel'
 	          )
 	        );
@@ -61486,15 +61503,15 @@
 	      //if !isEditing, return edit/delete
 	      return _react2.default.createElement(
 	        'td',
-	        null,
+	        { className: 'text-right' },
 	        _react2.default.createElement(
 	          'button',
-	          { onClick: this.onEditClick.bind(this) },
+	          { className: 'btn btn-primary glyphicon glyphicon-edit', onClick: this.onEditClick.bind(this) },
 	          'Edit'
 	        ),
 	        _react2.default.createElement(
 	          'button',
-	          { onClick: this.props.deleteTask.bind(this, this.props.task) },
+	          { className: 'btn btn-danger glyphicon glyphicon-trash', onClick: this.props.deleteTask.bind(this, this.props.task) },
 	          'Delete'
 	        )
 	      );
@@ -61506,14 +61523,22 @@
 	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
-	        'tr',
-	        null,
+	        'table',
+	        { className: 'table' },
 	        _react2.default.createElement(
-	          'td',
+	          'tbody',
 	          null,
-	          this.renderTaskSection()
-	        ),
-	        this.renderActionsSection()
+	          _react2.default.createElement(
+	            'tr',
+	            null,
+	            _react2.default.createElement(
+	              'td',
+	              null,
+	              this.renderTaskSection()
+	            ),
+	            this.renderActionsSection()
+	          )
+	        )
 	      );
 	    }
 
@@ -61564,7 +61589,7 @@
 /* 480 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -61594,16 +61619,25 @@
 	  }
 
 	  _createClass(ModalAlert, [{
-	    key: 'render',
+	    key: "render",
 	    value: function render() {
 	      //task and action header names. simple component. 
 	      return _react2.default.createElement(
-	        'div',
-	        null,
+	        "div",
+	        { className: "panel panel-default" },
 	        _react2.default.createElement(
-	          'p',
-	          null,
-	          'Thank You! Your order has been placed.'
+	          "div",
+	          { className: "panel-body text-center" },
+	          _react2.default.createElement(
+	            "h1",
+	            null,
+	            "Thanks for your order!"
+	          ),
+	          _react2.default.createElement(
+	            "p",
+	            null,
+	            "You will receive a confirmation email shortly."
+	          )
 	        )
 	      );
 	    }
@@ -61666,14 +61700,14 @@
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'div',
-	        null,
+	        { className: 'text-center' },
 	        _react2.default.createElement(_modal2.default, { success: this.state.success }),
 	        _react2.default.createElement(
 	          'ul',
-	          null,
+	          { className: 'list-group' },
 	          _react2.default.createElement(
 	            'li',
-	            null,
+	            { className: 'list-group-item' },
 	            _react2.default.createElement(
 	              _reactRouter.Link,
 	              { to: '/main' },
@@ -61752,13 +61786,13 @@
 	  render: function render() {
 	    return React.createElement(
 	      "div",
-	      { className: "container" },
+	      { className: "container text-center" },
 	      React.createElement(
 	        "div",
-	        { className: "row" },
+	        { className: "row text-center" },
 	        React.createElement(
 	          "div",
-	          { className: "jumbotron" },
+	          { className: "jumbotron text-center" },
 	          React.createElement(
 	            "h2",
 	            { className: "text-center" },
@@ -61770,30 +61804,26 @@
 	            React.createElement(
 	              "em",
 	              null,
-	              "Please fill out the required fields"
+	              "An easy delivery app for everyday items!"
 	            )
 	          )
 	        ),
 	        React.createElement(
 	          "div",
-	          { className: "col-md-6" },
-	          React.createElement(Form, { setTerm: this.setTerm })
-	        ),
-	        React.createElement(
-	          "div",
-	          { className: "col-md-6" },
+	          { className: "col-md-6 text-center" },
+	          React.createElement(Form, { setTerm: this.setTerm }),
 	          React.createElement(Results, { address: this.state.results })
 	        )
 	      ),
 	      React.createElement(
-	        "div",
-	        null,
+	        "span",
+	        { className: "text-center" },
 	        React.createElement(
 	          "ul",
-	          { role: "nav" },
+	          { className: "list-group", role: "nav" },
 	          React.createElement(
 	            "li",
-	            null,
+	            { className: "list-group-item" },
 	            React.createElement(
 	              _reactRouter.Link,
 	              { to: "/order" },
@@ -61848,50 +61878,54 @@
 	  render: function render() {
 	    return React.createElement(
 	      "div",
-	      { className: "panel panel-default" },
+	      { className: "container text-center" },
 	      React.createElement(
 	        "div",
-	        { className: "panel-heading" },
+	        { className: "panel panel-default text-center" },
 	        React.createElement(
-	          "h3",
-	          { className: "panel-title text-center" },
-	          "Enter the Delivery Address"
-	        )
-	      ),
-	      React.createElement(
-	        "div",
-	        { className: "panel-body text-center" },
-	        React.createElement(
-	          "form",
-	          { onSubmit: this.handleSubmit },
+	          "div",
+	          { className: "panel-heading text-center" },
 	          React.createElement(
-	            "div",
-	            { className: "form-group" },
+	            "h3",
+	            { className: "panel-title text-center" },
+	            "Enter the Delivery Address"
+	          )
+	        ),
+	        React.createElement(
+	          "div",
+	          { className: "panel-body text-center" },
+	          React.createElement(
+	            "form",
+	            { onSubmit: this.handleSubmit },
 	            React.createElement(
-	              "h4",
-	              { className: "" },
+	              "div",
+	              { className: "form-group text-center" },
 	              React.createElement(
-	                "strong",
-	                null,
-	                "Location"
+	                "h4",
+	                { className: "" },
+	                React.createElement(
+	                  "strong",
+	                  null,
+	                  "Location"
+	                )
+	              ),
+	              React.createElement("input", {
+	                value: this.state.term,
+	                type: "text",
+	                className: "form-control text-center",
+	                id: "term",
+	                onChange: this.handleChange,
+	                required: true
+	              }),
+	              React.createElement("br", null),
+	              React.createElement(
+	                "button",
+	                {
+	                  className: "btn btn-primary",
+	                  type: "submit"
+	                },
+	                "Submit"
 	              )
-	            ),
-	            React.createElement("input", {
-	              value: this.state.term,
-	              type: "text",
-	              className: "form-control text-center",
-	              id: "term",
-	              onChange: this.handleChange,
-	              required: true
-	            }),
-	            React.createElement("br", null),
-	            React.createElement(
-	              "button",
-	              {
-	                className: "btn btn-primary",
-	                type: "submit"
-	              },
-	              "Submit"
 	            )
 	          )
 	        )
@@ -61920,19 +61954,32 @@
 	  render: function render() {
 	    return React.createElement(
 	      "div",
-	      { className: "panel panel-default" },
+	      { className: "container text-center" },
 	      React.createElement(
 	        "div",
-	        { className: "panel-body text-center" },
+	        { className: "panel panel-default text-center" },
 	        React.createElement(
-	          "h1",
-	          null,
-	          "Address:"
+	          "div",
+	          { className: "panel-heading" },
+	          React.createElement(
+	            "h3",
+	            { className: "panel-title text-center" },
+	            "If this address is correct, then please click next."
+	          )
 	        ),
 	        React.createElement(
-	          "p",
-	          null,
-	          this.props.address
+	          "div",
+	          { className: "panel-body text-center" },
+	          React.createElement(
+	            "h1",
+	            null,
+	            "Address:"
+	          ),
+	          React.createElement(
+	            "p",
+	            null,
+	            this.props.address
+	          )
 	        )
 	      )
 	    );
